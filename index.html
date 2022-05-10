@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <script type="module" src="./src/main.ts" defer></script>
+</head>
+
+<body>
+  <div class="gameCanvasContainer">
+    <canvas class="gameCanvas"></canvas>
+    <p class="scoreBoard">0</p>
+    <div class="floatingDisplay"></div>
+  </div>
+
+  <div class="gameButtonContainer">
+    <button id="ud" class='directionalButton' style="grid-area: U;">⇧</button>
+    <button id="ld" class='directionalButton' style="grid-area: L;">⇦</button>
+    <button id="rd" class='directionalButton' style="grid-area: R;">⇨</button>
+    <button id="dd" class='directionalButton' style="grid-area: D;">⇩</button>
+  </div>
+</body>
+
+</html>

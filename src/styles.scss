@@ -1,0 +1,149 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 4fr;
+
+  background-color: #111;
+
+  @media (min-width: 700px) {
+    display: flex;
+  }
+}
+
+.gameCanvasContainer {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  justify-self: center;
+  align-self: center;
+
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gameCanvas {
+  height: 100%;
+
+  aspect-ratio: 1/1;
+  image-rendering: pixelated;
+
+  border: solid 2px #fff;
+
+  box-shadow: inset 0 4px 10px 2px #0008;
+}
+
+.scoreBoard {
+  position: absolute;
+  bottom: 8px;
+
+  font-family: monospace;
+  color: #07f;
+  font-size: 24px;
+}
+
+.gameButtonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: '. U .''L . R''. D .';
+
+  justify-self: center;
+  align-self: center;
+
+  width: 192px;
+  height: 192px;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+
+.directionalButton {
+  width: 100%;
+  height: 100%;
+
+  justify-self: center;
+  align-self: center;
+
+  background-color: #1cfe9c;
+  color: #000;
+
+  border-radius: 100%;
+
+  box-shadow: 0 6px #006839, inset 2px 2px 2px 2px #aff5;
+
+  font-weight: 700;
+  font-size: 150%;
+  line-height: 30px;
+
+  transform: translateY(-3px);
+  user-select: none;
+
+  &:active {
+    background-color: #12a054;
+    box-shadow: 0 3px #00351a;
+    transform: translateY(0);
+  }
+}
+
+.floatingDisplay {
+  position: absolute;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+
+  color: #fff;
+
+  h1,
+  h2 {
+    text-shadow: 0 1px #000, 0 -1px #000, 1px 0 #000, -1px 0 #000;
+  }
+
+  text-align: center;
+  user-select: none;
+
+  button {
+    padding: 6px 16px;
+    border-radius: 6px;
+
+    background-color: #80ffb5;
+    color: #000;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow: 0 4px #16854f;
+    transform: translateY(-2px);
+    cursor: pointer;
+
+    &:active {
+      box-shadow: 0 2px #16853d;
+      transform: translateY(0);
+    }
+  }
+}
